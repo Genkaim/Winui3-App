@@ -1,0 +1,18 @@
+{
+  "runtimeOptions": {
+    "tfm": "net6.0",
+    "framework": {
+      "name": "Microsoft.NETCore.App",
+      "version": "6.0.25"
+    },
+    "additionalProbingPaths": [
+      "C:\\Users\\cxh20\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\cxh20\\.nuget\\packages",
+      "D:\\vs——\\3\\NuGetPackages"
+    ],
+    "configProperties": {
+      "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": false,
+      "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
+    }
+  }
+}

@@ -1,0 +1,1 @@
+D:\winui\randomtest\randomtest\bin\x86\Release\net6.0-windows10.0.19041.0\win10-x86\AppPackages\randomtest_1.0.0.0_x86_Test\randomtest_1.0.0.0_x86.msix

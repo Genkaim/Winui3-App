@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "randomtest (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "randomtest (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

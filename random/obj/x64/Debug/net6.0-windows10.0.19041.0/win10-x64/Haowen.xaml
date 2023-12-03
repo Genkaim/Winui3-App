@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="randomtest.Haowen"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:randomtest"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="transparent">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Width="175" Height="365" Margin="40,30,40,100" CornerRadius="20">
+                <Border.Background>
+                    <ImageBrush ImageSource="Assets\img-1.png" />
+                </Border.Background>
+            </Border>
+        <Border Grid.Column="1" Width="175" Height="365" Margin="0,30,40,100" CornerRadius="20">
+                <Border.Background>
+                    <ImageBrush ImageSource="Assets\img-0.png" />
+                </Border.Background>
+            </Border>
+        <Border x:ConnectionId='2' Grid.Column="2" Width="175" Height="365" Margin="0,30,0,100" CornerRadius="20" Opacity="0.01"               >
+            <Border.Background>
+                <ImageBrush ImageSource="Assets\img-2.jpg" />
+            </Border.Background>
+        </Border>
+    </Grid>
+
+</Page>
+
