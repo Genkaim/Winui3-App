@@ -9,8 +9,8 @@
 
   <Identity
     Name="69f2493c-ac32-4408-8461-321a3766fd4a"
-    Publisher="CN=Contoso Software, O=Contoso Corporation, C=US"
-    Version="1.0.4.0" />
+    Publisher="CN=Genkaim, O=Genkaim, C=CN"
+    Version="1.1.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="69f2493c-ac32-4408-8461-321a3766fd4a" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 

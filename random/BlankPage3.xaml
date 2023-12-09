@@ -7,7 +7,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="transparent">
+    Background="transparent"
+    Loaded="Page_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -23,6 +24,13 @@
             Height="390"  
             CornerRadius="20" 
             Margin="25,21,0,1110">
+            <!--
+            <TextBlock x:Name="randomShw" 
+              HorizontalAlignment="center" 
+              FontSize="100" 
+              Margin="10,30,10,10"
+              Text="{Binding Path=GlobalVariables.AllowDuplicates}" />
+            -->
             <TextBlock x:Name="randomShow" 
                HorizontalAlignment="center" 
                FontSize="100" 
@@ -69,13 +77,13 @@
                             <Border x:Name="MyBorder" Loaded="Border_Loaded" Tapped="Border_Tapped"  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="70"  Width="300" Padding="20,15,0,0" Margin="0,0,32,11"  CornerRadius="13">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="100" />
-                                        <ColumnDefinition Width="200" />
+                                        <ColumnDefinition Width="50" />
+                                        <ColumnDefinition Width="15" />
                                         <ColumnDefinition Width="200" />
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Grid.Column="0" Text="{x:Bind Index}" Margin="3,2,0,0"  FontSize="25" Foreground="#b2b2b2" />
-                                    <TextBlock Grid.Column="2" Text="{x:Bind CorrespondingData.Data}" Margin="-180,2,0,0" FontSize="25" />
-                                    <TextBlock Grid.Column="1" Text="{x:Bind Value}" Margin="{x:Bind ValueMargin}" FontSize="30"/>
+                                    <TextBlock Grid.Column="2" HorizontalAlignment="Right" Text="{x:Bind CorrespondingData.Data}" Margin="0,0,15,0" FontSize="27" />
+                                    <TextBlock Grid.Column="1" Text="{x:Bind Value}" HorizontalAlignment="Right"  Margin="{x:Bind ValueMargin}" FontSize="{x:Bind ValueFontSize}"/>
                                 </Grid>
                             </Border>
                         </DataTemplate>

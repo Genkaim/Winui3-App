@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\winui\\randomtest\\randomtest\\randomtest.csproj": {}
+    "D:\\winui\\randomtest\\randomtest.csproj": {}
   },
   "projects": {
-    "D:\\winui\\randomtest\\randomtest\\randomtest.csproj": {
+    "D:\\winui\\randomtest\\randomtest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\winui\\randomtest\\randomtest\\randomtest.csproj",
+        "projectUniqueName": "D:\\winui\\randomtest\\randomtest.csproj",
         "projectName": "randomtest",
-        "projectPath": "D:\\winui\\randomtest\\randomtest\\randomtest.csproj",
+        "projectPath": "D:\\winui\\randomtest\\randomtest.csproj",
         "packagesPath": "C:\\Users\\cxh20\\.nuget\\packages\\",
-        "outputPath": "D:\\winui\\randomtest\\randomtest\\obj\\",
+        "outputPath": "D:\\winui\\randomtest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\vs——\\3\\NuGetPackages"

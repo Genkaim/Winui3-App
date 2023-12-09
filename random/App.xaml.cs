@@ -17,6 +17,7 @@ using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
+using Windows.UI.ViewManagement;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -32,6 +33,20 @@ namespace randomtest
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
+        public void SetBlackBar()
+        {
+            // 获取标题栏
+            var window = Window.Current;
+
+            // 创建一个新的标题栏
+            var titleBar = new Grid()
+            {
+                Background = new SolidColorBrush(Microsoft.UI.Colors.Black),
+            };
+
+            // 设置标题栏
+            window.SetTitleBar(titleBar);
+        }
         public App()
         {
             this.InitializeComponent();
@@ -55,6 +70,7 @@ namespace randomtest
                         break;
                     case "白色主题":
                         this.RequestedTheme = ApplicationTheme.Light;
+                     //   SetBlackBar();
                         break;
                 }
             }

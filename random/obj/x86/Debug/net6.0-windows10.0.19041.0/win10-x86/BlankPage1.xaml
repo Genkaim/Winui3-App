@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="randomtest.BlankPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:randomtest"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d"
+>
+    <Page.Resources>
+        <CornerRadius x:Key="NavigationViewContentGridCornerRadius">0</CornerRadius>
+    </Page.Resources>
+    <Grid>
+        <Border x:ConnectionId='2' x:Name="AppTitleBar"
+            IsHitTestVisible="True"
+            VerticalAlignment="Top"
+            Background="Transparent"
+            Height="30"
+            Margin="48,3,0,0">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:ConnectionId='5' x:Name="appTitle"
+                Text="随机数"
+                VerticalAlignment="Center"
+                Margin="-27,2,0,0"
+                Style="{StaticResource CaptionTextBlockStyle}" />
+            </StackPanel>
+        </Border>
+        <muxc:NavigationView x:ConnectionId='3' x:Name="NavigationViewControl"          
+            Margin="0,30,0,0"  
+                                                                         
+            PaneDisplayMode="Top"
+                                                           
+            IsBackButtonVisible="Collapsed">
+            <muxc:NavigationView.MenuItems >
+                <muxc:NavigationViewItem  Margin="0,0,0,0" Width="60" CornerRadius="7"  Height="45" Content="主页" Tag="HomePage"/>
+                <muxc:NavigationViewItem CornerRadius="7"  Height="45" Content="绑定" Tag="Page1"/>
+                <!-- <muxc:NavigationViewItem CornerRadius="7"  Height="45" Content="嘿嘿" Tag="Haowen"/> -->
+            </muxc:NavigationView.MenuItems>
+            <Frame x:ConnectionId='4' x:Name="contentFrame" Background="Transparent"></Frame>
+        </muxc:NavigationView>
+    </Grid>
+</Page>
+

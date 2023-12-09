@@ -25,10 +25,8 @@ using Windows.Storage;
 
 namespace randomtest
 {
-    public static class GlobalData
-    {
-        public static DataWithIndex[] Data { get; set; }
-    }
+
+
     public class NumberWithIndex
     {
         public int Value { get; set; }
@@ -51,7 +49,14 @@ namespace randomtest
         {
             get
             {
-                return string.IsNullOrEmpty(CorrespondingData.Data) ? new Thickness(115, -1, 0, 0) : new Thickness(-30, -1, 0, 0);
+                return string.IsNullOrEmpty(CorrespondingData.Data) ? new Thickness(0, 0, -185, 0) : new Thickness(0, 3, 0, 0);
+            }
+        }
+        public int ValueFontSize
+        {
+            get
+            {
+                return string.IsNullOrEmpty(CorrespondingData.Data) ? 30 : 0; // 返回 int 类型的字体大小值  
             }
         }
     }
@@ -149,24 +154,48 @@ namespace randomtest
         {
             viewModel.num = new Random().Next(1, viewModel.Limit+1); // 生成一个随机数
         }
+        List<int> To = new List<int>();
         private void startButton_Click(object sender, RoutedEventArgs e)
         {
             if (startButtonIcon.Glyph == "")
             {
                 startButtonIcon.Glyph = "";
+                if (To.Count == viewModel.Limit && !GlobalData.AllowDuplicates) return;
                 timer.Start(); // 启动定时器
             }
             else
             {
                 startButtonIcon.Glyph = "";
                 timer.Stop(); // 停止定时器
-
+                if(!GlobalData.AllowDuplicates)
+                {
+                    if (To.Count == viewModel.Limit) return;
+                    while (To.Contains(viewModel.num))
+                    {
+                        viewModel.num = new Random().Next(1, viewModel.Limit + 1);
+                    }
+                    To.Add(viewModel.num);
+                }
                 // 将当前的 num 值添加到集合中
                 numList.Add(new NumberWithIndex { Value = viewModel.num, Index = numList.Count + 1 });
-
             }
         }
-
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            var localSettings = ApplicationData.Current.LocalSettings;
+            if (localSettings.Values.ContainsKey("AllowDuplicates"))
+            {
+                // Get the value of "AllowDuplicates" key  
+                var allowDuplicates = Convert.ToBoolean(localSettings.Values["AllowDuplicates"]);
+                // Set the IsOn property of MyToggleSwitch based on the value of allowDuplicates  
+                GlobalData.AllowDuplicates = allowDuplicates;
+            }
+            else
+            {
+                GlobalData.AllowDuplicates = false;
+                // If "AllowDuplicates" key does not exist, set MyToggleSwitch to default value (false)  
+            }
+        }
         private void Border_Loaded(object sender, RoutedEventArgs e)
         {
             Border border = sender as Border;
@@ -218,7 +247,7 @@ namespace randomtest
                     ContentDialog Dialog = new ContentDialog
                     {
                         XamlRoot = this.XamlRoot,
-                        Title = "错误",
+                        Title = "提示",
                         Content = "有数据绑定时无法自定义随机数范围",
                         CloseButtonText = "确认"
                     };

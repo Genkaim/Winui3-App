@@ -724,6 +724,7 @@ namespace randomtest.randomtest_XamlTypeInfo
                 userType.AddMemberName("Index");
                 userType.AddMemberName("CorrespondingData");
                 userType.AddMemberName("ValueMargin");
+                userType.AddMemberName("ValueFontSize");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -1436,62 +1437,67 @@ namespace randomtest.randomtest_XamlTypeInfo
             var that = (global::randomtest.NumberWithIndex)instance;
             return that.ValueMargin;
         }
-        private object get_63_MicaBackdrop_Kind(object instance)
+        private object get_63_NumberWithIndex_ValueFontSize(object instance)
+        {
+            var that = (global::randomtest.NumberWithIndex)instance;
+            return that.ValueFontSize;
+        }
+        private object get_64_MicaBackdrop_Kind(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Media.MicaBackdrop)instance;
             return that.Kind;
         }
-        private void set_63_MicaBackdrop_Kind(object instance, object Value)
+        private void set_64_MicaBackdrop_Kind(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Media.MicaBackdrop)instance;
             that.Kind = (global::Microsoft.UI.Composition.SystemBackdrops.MicaKind)Value;
         }
-        private object get_64_TreeViewNode_Children(object instance)
+        private object get_65_TreeViewNode_Children(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Children;
         }
-        private object get_65_TreeViewNode_Content(object instance)
+        private object get_66_TreeViewNode_Content(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Content;
         }
-        private void set_65_TreeViewNode_Content(object instance, object Value)
+        private void set_66_TreeViewNode_Content(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.Content = (global::System.Object)Value;
         }
-        private object get_66_TreeViewNode_Depth(object instance)
+        private object get_67_TreeViewNode_Depth(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Depth;
         }
-        private object get_67_TreeViewNode_HasChildren(object instance)
+        private object get_68_TreeViewNode_HasChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasChildren;
         }
-        private object get_68_TreeViewNode_HasUnrealizedChildren(object instance)
+        private object get_69_TreeViewNode_HasUnrealizedChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasUnrealizedChildren;
         }
-        private void set_68_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
+        private void set_69_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.HasUnrealizedChildren = (global::System.Boolean)Value;
         }
-        private object get_69_TreeViewNode_IsExpanded(object instance)
+        private object get_70_TreeViewNode_IsExpanded(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.IsExpanded;
         }
-        private void set_69_TreeViewNode_IsExpanded(object instance, object Value)
+        private void set_70_TreeViewNode_IsExpanded(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.IsExpanded = (global::System.Boolean)Value;
         }
-        private object get_70_TreeViewNode_Parent(object instance)
+        private object get_71_TreeViewNode_Parent(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Parent;
@@ -1930,57 +1936,63 @@ namespace randomtest.randomtest_XamlTypeInfo
                 xamlMember.Getter = get_62_NumberWithIndex_ValueMargin;
                 xamlMember.SetIsReadOnly();
                 break;
+            case "randomtest.NumberWithIndex.ValueFontSize":
+                userType = (global::randomtest.randomtest_XamlTypeInfo.XamlUserType)GetXamlTypeByName("randomtest.NumberWithIndex");
+                xamlMember = new global::randomtest.randomtest_XamlTypeInfo.XamlMember(this, "ValueFontSize", "Int32");
+                xamlMember.Getter = get_63_NumberWithIndex_ValueFontSize;
+                xamlMember.SetIsReadOnly();
+                break;
             case "Microsoft.UI.Xaml.Media.MicaBackdrop.Kind":
                 userType = (global::randomtest.randomtest_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Media.MicaBackdrop");
                 xamlMember = new global::randomtest.randomtest_XamlTypeInfo.XamlMember(this, "Kind", "Microsoft.UI.Composition.SystemBackdrops.MicaKind");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_63_MicaBackdrop_Kind;
-                xamlMember.Setter = set_63_MicaBackdrop_Kind;
+                xamlMember.Getter = get_64_MicaBackdrop_Kind;
+                xamlMember.Setter = set_64_MicaBackdrop_Kind;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Children":
                 userType = (global::randomtest.randomtest_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::randomtest.randomtest_XamlTypeInfo.XamlMember(this, "Children", "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>");
-                xamlMember.Getter = get_64_TreeViewNode_Children;
+                xamlMember.Getter = get_65_TreeViewNode_Children;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Content":
                 userType = (global::randomtest.randomtest_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::randomtest.randomtest_XamlTypeInfo.XamlMember(this, "Content", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_65_TreeViewNode_Content;
-                xamlMember.Setter = set_65_TreeViewNode_Content;
+                xamlMember.Getter = get_66_TreeViewNode_Content;
+                xamlMember.Setter = set_66_TreeViewNode_Content;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Depth":
                 userType = (global::randomtest.randomtest_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::randomtest.randomtest_XamlTypeInfo.XamlMember(this, "Depth", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_66_TreeViewNode_Depth;
+                xamlMember.Getter = get_67_TreeViewNode_Depth;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasChildren":
                 userType = (global::randomtest.randomtest_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::randomtest.randomtest_XamlTypeInfo.XamlMember(this, "HasChildren", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_67_TreeViewNode_HasChildren;
+                xamlMember.Getter = get_68_TreeViewNode_HasChildren;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasUnrealizedChildren":
                 userType = (global::randomtest.randomtest_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::randomtest.randomtest_XamlTypeInfo.XamlMember(this, "HasUnrealizedChildren", "Boolean");
-                xamlMember.Getter = get_68_TreeViewNode_HasUnrealizedChildren;
-                xamlMember.Setter = set_68_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Getter = get_69_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Setter = set_69_TreeViewNode_HasUnrealizedChildren;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.IsExpanded":
                 userType = (global::randomtest.randomtest_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::randomtest.randomtest_XamlTypeInfo.XamlMember(this, "IsExpanded", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_69_TreeViewNode_IsExpanded;
-                xamlMember.Setter = set_69_TreeViewNode_IsExpanded;
+                xamlMember.Getter = get_70_TreeViewNode_IsExpanded;
+                xamlMember.Setter = set_70_TreeViewNode_IsExpanded;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Parent":
                 userType = (global::randomtest.randomtest_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::randomtest.randomtest_XamlTypeInfo.XamlMember(this, "Parent", "Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember.Getter = get_70_TreeViewNode_Parent;
+                xamlMember.Getter = get_71_TreeViewNode_Parent;
                 xamlMember.SetIsReadOnly();
                 break;
             }

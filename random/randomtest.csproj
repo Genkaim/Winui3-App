@@ -13,13 +13,13 @@
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
-    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <AppxBundle>Never</AppxBundle>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
-    <PackageCertificateThumbprint>151B5B4AD4970798ABFFBA9830097AF05CAF7A24</PackageCertificateThumbprint>
-    <AppxPackageDir>C:\Users\cxh20\Downloads\随机数\</AppxPackageDir>
+    <PackageCertificateThumbprint>102D42CDD32859B28CA5F2386ECCCF0904C3AC9C</PackageCertificateThumbprint>
+    <AppxPackageDir>C:\Users\cxh20\Downloads\</AppxPackageDir>
     <DefaultLanguage>zh-CN</DefaultLanguage>
   </PropertyGroup>
   <ItemGroup>

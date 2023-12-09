@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oNSdbg1aXrzbNdHgz2qb7DoYQ/eTIyQhmhKk9ETftXt6HLtF+d+Mg1hOgxXl6syKm0WBVu28RbGdOT8LUdm0MA==",
+  "dgSpecHash": "YNreGuxuEGnyvbCi/3H8n0PYKYG/Do/KH1QsJtn8AJCXwcNxtbZnXG7vV6ep7NFBldQ6MJ/HSwvHxYXHKPwMcg==",
   "success": true,
-  "projectFilePath": "D:\\winui\\randomtest\\randomtest\\randomtest.csproj",
+  "projectFilePath": "D:\\winui\\randomtest\\randomtest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cxh20\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0\\microsoft.win32.systemevents.8.0.0.nupkg.sha512",
     "C:\\Users\\cxh20\\.nuget\\packages\\microsoft.windows.cswin32\\0.3.49-beta\\microsoft.windows.cswin32.0.3.49-beta.nupkg.sha512",

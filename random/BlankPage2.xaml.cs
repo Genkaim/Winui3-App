@@ -235,7 +235,7 @@ namespace randomtest
                 }
             }
         }
-        private string lineInput;
+        private string lineInput="2";
             
         public string ColInput
         {
@@ -250,7 +250,7 @@ namespace randomtest
                 }
             }
         }
-        private string colInput;
+        private string colInput="A";
 
         private void UpdateLine(object sender, TextChangedEventArgs e)
         {

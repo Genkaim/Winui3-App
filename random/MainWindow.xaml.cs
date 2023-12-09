@@ -19,6 +19,8 @@ using WinRT.Interop;
 using Microsoft.UI.Windowing;
 using PInvoke;
 using System.Runtime.InteropServices;
+using Windows.Graphics.Display;
+using Windows.UI.ViewManagement;
 
 public static class NativeMethods
 {
@@ -33,48 +35,64 @@ public static class NativeMethods
     [DllImport("user32.dll")]
     public static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
 }
-
-
-// To learn more about WinUI, the WinUI project structure,
-// and more about our project templates, see: http://aka.ms/winui-project-info.
-
 namespace randomtest
 {
-
-
-
     public sealed partial class MainWindow : Window
     {
-
-
         private IntPtr hwnd;
         private AppWindow appWindow;
+
+        [DllImport("user32.dll")]
+        static extern uint GetDpiForWindow(IntPtr hwnd);
+
+        [DllImport("user32.dll")]
+        static extern IntPtr GetDC(IntPtr hWnd);
+
+        [DllImport("gdi32.dll")]
+        static extern int GetDeviceCaps(IntPtr hdc, int nIndex);
+
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
+
+        const int LOGPIXELSX = 88;
+        const int LOGPIXELSY = 90;
+        const uint SWP_NOMOVE = 0x0002;
+        const uint SWP_NOZORDER = 0x0004;
+
         public MainWindow()
         {
-            ExtendsContentIntoTitleBar = true;
             this.InitializeComponent();
-            SystemBackdrop = new MicaBackdrop()
-            { Kind = MicaKind.Base };
-            MyFrame.Navigate(typeof(randomtest.BlankPage1));
-            this.InitializeComponent();
-
             hwnd = WindowNative.GetWindowHandle(this);
             WindowId id = Win32Interop.GetWindowIdFromWindow(hwnd);
             appWindow = AppWindow.GetFromWindowId(id);
-            appWindow.MoveAndResize(new RectInt32(_X: 560, _Y: 280, _Width: 1400, _Height: 1040));
-            
+
+            ExtendsContentIntoTitleBar = true;
+            SystemBackdrop = new MicaBackdrop() { Kind = MicaKind.Base };
+            MyFrame.Navigate(typeof(randomtest.BlankPage1));
+
+            // 获取窗口的 DPI
+            uint dpi = GetDpiForWindow(hwnd);
+
+            // 获取设备上下文
+            IntPtr hdc = GetDC(hwnd);
+
+            // 获取显示器的实际分辨率和缩放比例
+            int dpiX = GetDeviceCaps(hdc, LOGPIXELSX);
+            int dpiY = GetDeviceCaps(hdc, LOGPIXELSY);
+
+            // 根据 DPI 设置窗口大小
+            int width = (int)(700.0 * dpiX / 96.0);
+            int height = (int)(520.0 * dpiY / 96.0);
+
+            // 设置窗口大小
+            SetWindowPos(hwnd, IntPtr.Zero, 0, 0, width, height, SWP_NOMOVE | SWP_NOZORDER);
+
             int style = NativeMethods.GetWindowLong(hwnd, NativeMethods.GWL_STYLE);
             style &= ~NativeMethods.WS_MAXIMIZEBOX; // 禁止窗口最大化
             NativeMethods.SetWindowLong(hwnd, NativeMethods.GWL_STYLE, style);
-            
             style &= ~NativeMethods.WS_SIZEBOX; // 设置窗体不可调整大小
             NativeMethods.SetWindowLong(hwnd, NativeMethods.GWL_STYLE, style);
-            
-
         }
-
-
-
     }
-
 }
